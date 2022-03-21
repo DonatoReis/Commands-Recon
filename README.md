@@ -47,7 +47,7 @@ nmap -sV <target> -p 161
 nmap -sV <target> -p5222,5269
 ```
 
-## Comando Enum4linux
+## Command Enum4linux
 
 ## Enum SMB
 ```
