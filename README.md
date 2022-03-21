@@ -17,6 +17,11 @@
 nmap -sS -sCV -Pn <target> -oN nmap.txt
 
 ```
+### `Only Open Ports and Banner Grab`
+
+```shell
+nmap -n -Pn -sS <target> --open -sV
+```
 
 ### `SSH Brute Force credentials`
 ```shell
