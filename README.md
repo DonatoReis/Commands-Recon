@@ -10,46 +10,61 @@
   </p>
 </div>
 
-## Basic and efective scan
-```
+### `Basic and efective scan`
+
+```shell
+
 nmap -sS -sCV -Pn <target> -oN nmap.txt
+
 ```
 
-## SSH Brute Force credentials
-```
+### `SSH Brute Force credentials`
+```shell
+
 nmap -p 22 --script ssh-brute --script-args userdb=username.txt,passdb=password.txt <target> -oN nmap.txt
+
 ```
 
-## TFTP enum
-```
+### `TFTP enum`
+```shell
+
 nmap -sU -p 69 --script tftp-enum.nse --script-args tftp-enum.filelist=customlist.txt <host> -oN nmap.txt
+
 ```
 
-## MySql enum
-```
+### `MySql enum`
+```shell
 nmap --script=mysql-enum -p 3306 <target> -oN nmap.txt
 ```
 
-## Smtp enum | brute
-```
+### `Smtp enum | brute`
+```shell
+
 nmap --script smtp-enum-users.nse [--script-args smtp-enum-users.methods={EXPN,VRFY,RCPT},...] -p 25,465,587 <host> -oN nmap.txt
 nmap --script=smtp-enum-users --script-args smtp.domain=value,smtp-enum-users.methods=value <target> -oN nmap.txt
 nmap -p 25 --script smtp-brute <target> -oN nmap.txt
+
 ```
 
-## SNMP
-```
+### `SNMP`
+```shell
+
 nmap -sV <target> -p 161
+
 ```
 
-## jabber xmpp
-```
+### `jabber xmpp`
+```shell
+
 nmap -sV <target> -p5222,5269
+
 ```
 
 ## Command Enum4linux
 
-## Enum SMB
-```
+### `Enum SMB`
+```shell
+
 enum4linux <target> -A -d
+
 ```
