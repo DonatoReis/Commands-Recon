@@ -73,3 +73,48 @@ nmap -sV <target> -p5222,5269
 enum4linux <target> -A -d
 
 ```
+
+## TCP Connect Scan ( -sT)
+```shell
+A varredura de conexão usa a chamada do sistema com o mesmo nome para varrer as máquinas, em vez de depender de pacotes brutos como a maioria dos outros métodos. Geralmente é usado por usuários Unix sem privilégios e contra alvos IPv6 porque a varredura SYN não funciona nesses casos.
+```
+
+## UDP Scan ( -sU)
+```shell
+Não se esqueça das portas UDP — elas também oferecem muitas brechas de segurança.
+```
+
+## TCP FIN, NULL e Xmas Scans ( -sF, -sX, -sN)
+```shell
+Esses tipos de varredura de propósito especial são adeptos de passar por firewalls para explorar os sistemas por trás deles. Infelizmente, eles dependem do comportamento de destino que alguns sistemas (particularmente variantes do Windows) não exibem.
+```
+
+## TCP ACK Scan ( -sA)
+```shell
+A varredura ACK é comumente usada para mapear conjuntos de regras de firewall. Em particular, ajuda a entender se as regras de firewall são stateful ou não. A desvantagem é que não consegue distinguir portas abertas de portas fechadas.
+```
+
+## TCP Window Scan ( -sW)
+```shell
+A varredura de janela é como a varredura de ACK, exceto que é capaz de detectar portas abertas versus portas fechadas em determinadas máquinas.
+```
+
+## TCP Maimon Scan ( -sM)
+```shell
+Esse tipo obscuro de varredura de evasão de firewall é semelhante a uma varredura FIN, mas também inclui o sinalizador ACK. Isso permite que ele obtenha mais firewalls de filtragem de pacotes, com a desvantagem de funcionar contra ainda menos sistemas do que a varredura FIN.
+```
+
+## TCP Idle Scan ( -sI zombie host) 
+```shell
+A varredura ociosa é o tipo de varredura mais furtivo de todos e, às vezes, pode explorar relacionamentos de endereços IP confiáveis. Infelizmente, também é lento e complexo.
+```
+
+## Varredura de Protocolo IP ( -sO)
+```shell
+A varredura de protocolo determina quais protocolos IP (TCP, ICMP, IGMP, etc.) são suportados pela máquina de destino. Isso não é tecnicamente uma varredura de porta, pois percorre os números de protocolo IP em vez de números de porta TCP ou UDP. No entanto, ele ainda usa a -popção de selecionar números de protocolo verificados, relata seus resultados com o formato normal da tabela de portas e até usa o mesmo mecanismo de verificação subjacente que os métodos de verificação de portas reais. Portanto, está perto o suficiente de uma varredura de porta que pertence aqui.
+```
+
+## TCP FTP Bounce Scan ( -b)
+```shell
+Esse tipo de varredura obsoleto engana os servidores FTP para que executem varreduras de porta por proxy. A maioria dos servidores FTP agora são corrigidos para evitar isso, mas é uma boa maneira de passar por firewalls restritivos quando funciona.
+```
